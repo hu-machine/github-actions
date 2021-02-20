@@ -1,0 +1,8 @@
+{
+  "name": "github-actions",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/hu-machine/github-actions.git",
+  "author": "z-doct <zameer.ou@gmail.com>",
+  "license": "MIT"
+}
