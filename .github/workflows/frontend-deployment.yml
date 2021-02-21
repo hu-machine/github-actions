@@ -1,0 +1,21 @@
+name: Staging Frontend Deployment
+
+on:
+  push:
+    branches: 'staging'
+
+jobs:
+  next:
+    name: deploy nextjs
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@master
+      - name: copy code to instance
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{secrets.AWS_SERVER_IPADDRESS}}
+          username: ${{secrets.AWS_SERVER_USERNAME}}
+          port: ${{secrets.AWS_SERVER_PORT}}
+          key: ${{secrets.AWS_SERVER_SSHKEY}}
+          source: ./frontend
+          target: "~/github-actions/"
